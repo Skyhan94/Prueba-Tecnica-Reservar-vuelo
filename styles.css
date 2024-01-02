@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+body{
+    background-image: radial-gradient(circle at -19.64% 37.72%, #dfffff 0, #ccffff 10%, #b7fdfc 20%, #9ff4f8 30%, #83e9f5 40%, #61def2 50%, #32d2f0 60%, #00c7f0 70%, #00bcf0 80%, #00b2f1 90%, #00a9f2 100%);
+    margin: 0;
+}
+
+.inicio{
+    display: flex;
+    height: 100vh;
+}
+
+.description-content{
+    width: 50%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.description{
+    padding: 30px;
+}
+
+.text-description{
+    font-size: 2vw;
+    font-family: 'Acme', sans-serif;
+    font-weight: 900;
+    text-align: center;
+}
+
+#registration-login {
+    width: 50%;
+}
+
+#registration-form, #login-form {
+    display: none;
+    align-items: center;
+    padding: 30px;
+    background-image: radial-gradient(circle at -19.64% 37.72%, #bcd672 0, #c3cf66 7.14%, #c9c759 14.29%, #cebd4c 21.43%, #d3b23f 28.57%, #d7a733 35.71%, #db9a27 42.86%, #dd8b1c 50%, #df7c15 57.14%, #e26c14 64.29%, #e45b19 71.43%, #e64921 78.57%, #e8332a 85.71%, #e91334 92.86%, #e9003f 100%);
+    border-radius: 10px;
+}
+
+#registration-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-image: radial-gradient(circle at -19.64% 37.72%, #bcd672 0, #c3cf66 7.14%, #c9c759 14.29%, #cebd4c 21.43%, #d3b23f 28.57%, #d7a733 35.71%, #db9a27 42.86%, #dd8b1c 50%, #df7c15 57.14%, #e26c14 64.29%, #e45b19 71.43%, #e64921 78.57%, #e8332a 85.71%, #e91334 92.86%, #e9003f 100%);
+    border-radius: 10px;
+    font-size: 25px;
+    font-family: 'Acme', sans-serif;
+    text-align: center;
+}
+
+button{
+    padding: 10px 40px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #45a049;
+}
+
+button:active{
+    background-color: #3e8e41;
+}
+
+
+.menu-login-register{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+}
+
+.control {
+    width: 100%;
+    background: white; 
+    border-radius: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 15px;
+    color: gray;
+}
+
+input::placeholder{
+    color: gray;
+}
+
+.option{
+    font-family: 'calibri';
+    font-size: 15px;
+    color: white;
+}
+
+.plane-content{
+    height: 10%;
+}
+
+.plane-content img{
+    width: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+    .inicio{
+        display: grid;
+        height: 100%;
+    }
+
+    .description-content{
+        width: 100%;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .menu-login-register{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .text-description{
+        font-size: 4vw;
+        font-family: 'Acme', sans-serif;
+        font-weight: 900;
+        text-align: center;
+    }
+  }

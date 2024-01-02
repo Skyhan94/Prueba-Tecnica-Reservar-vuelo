@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservatuvuelo.com</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <section class="inicio">
+        <section class="description-content">
+            <div class="description">
+                <div class="text-description">
+                    <h1>Bienvenido a Reservatuvuelo.com</h1>
+    
+                    <p>Reservatuvuelo ofrece servicios para buscar, comparar y reservar vuelos de manera conveniente. También brinda información detallada sobre los vuelos, asistencia en línea y promociones especiales.</h2>
+                </div>
+    
+                <div class="plane-content">
+                    <img src="img/pngwing.com.png" alt="">
+                </div>
+            </div>
+        </section>
+        <section class="menu-login-register">
+            <section class="registration-login" id="registration-login">
+                <div>
+                    <button onclick="registration();">Registro</button>
+                    <p>¿Ya eres usuario registrado?</p>
+                    <button onclick="login();">Iniciar Sesión</button>
+                </div>
+            </section>
+            <section class="registration-form" id="registration-form">
+                <div class="form_reg">
+                    <div>
+                        <form id="form_register" class="form_register"  method="post">
+                            <div>
+                                <select class="control" name="tipoIdentificacion" id="tipoIdentificacion">
+                                    <option disabled selected>Selecciona el tipo de documento</option>
+                                    <option value="Cedula de ciudadania">Cedula de ciudadania (CC)</option>
+                                    <option value="Cedula de extranjeria">Cedula de extranjeria (CE)</option>
+                                    <option value="Pasaporte">Pasaporte (PB)</option>
+                                    <option value="Nit">Nit (NI)</option>
+                                </select>
+                            </div>
+        
+                            <div>
+                                <input class="control" type="text" name="identificacion" id="identificacion" placeholder="ingrese su numero de identificación">
+                            </div>
+                            <div>
+                                <input class="control" type="text" name="usuario" id="usuario" placeholder="Ingrese su usuario">
+                            </div>
+                            <div>
+                                <input class="control" type="password" name="contraseña" id="contraseña" placeholder="Ingrese su contraseña">
+                            </div>
+                            <div>
+                                <input class="control" type="text" name="nombre" id="nombre" placeholder="ingrese su nombre completo">
+                            </div>
+                            <div>
+                                <input class="control" type="text" name="pais" id="pais" placeholder="ingrese el pais">
+                            </div>
+                            <div>
+                                <input class="control" type="text" name="ciudad" id="ciudad" placeholder="ingrese la ciudad">
+                            </div>
+                            <div>
+                                <input class="control" type="text" name="direccion" id="direccion" placeholder="ingrese la direccion">
+                            </div>
+                            <div>
+                                <input class="control" type="text" name="codigoPostal" id="codigoPostal" placeholder="ingrese su codigo postal">
+                            </div>
+                            <div>
+                                <input class="control" type="text" name="numeroTelefonico" id="numeroTelefonico" placeholder="ingrese su numero telefonico">
+                            </div>
+                            <div>
+                                <input class="control" type="email" name="email" id="email" placeholder="ingrese su email">
+                            </div>
+                        </form>
+                        <div>
+                            <button type="button" id="register" name="register">Registrar</button>
+    
+                            <button id="return" onclick="return_registration(); clean_form(); location.href = location.href;">volver</button>
+                        </div>
+        
+                        <div id="resultado">
+
+                        </div>
+                    </div>
+                    
+    
+                    <script>
+                        $("#register").click(function() {
+                            $.ajax({
+                                url: "php/pasajeroRegistro.php",
+                                type: "post",
+                                data: $("#form_register").serialize(),
+                                success: function(resultado){
+                                    $("#resultado").html(resultado)
+                                }
+                            })
+                        })
+                    </script>
+    
+                </div>
+            </section>
+            <section class="login-form" id="login-form">
+                <div>
+                    <form id="form_login" method="post">
+                        <div>
+                            <input class="control" type="text" name="usuario" id="usuario" placeholder="Ingrese su usuario o correo electronico">
+                        </div>
+                        <div>
+                            <input class="control" type="text" name="contraseña" id="contraseña" placeholder="Ingrese su contraseña">
+                        </div>
+                    </form>
+                    <button type="button" id="login-button" name="login-button">Iniciar Sesión</button>
+                    <button onclick="return_registration(); location.href = location.href">volver</button>
+                </div>
+
+                <div id="result">
+
+                </div>
+
+                <script>
+                    $("#login-button").click(function() {
+                        $.ajax({
+                            url: "php/pasajeroLogin.php",
+                            type: "post",
+                            data: $("#form_login").serialize(),
+                            success: function(resultado){
+                                $("#result").html(resultado)
+                            }
+                        })
+                    })
+                </script>
+            </section>            
+        </section>
+
+    </section>
+</body>
+</html>
